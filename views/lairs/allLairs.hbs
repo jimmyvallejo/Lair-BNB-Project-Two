@@ -1,15 +1,22 @@
-<h2>Lair page</h2>
 
 
 
+    
+<section id="lairPage">
+    <h2 class="allH2">Lair page</h2>
+<div class="allFlex">
 {{#each foundRooms}}
 
-<h3>{{name}}</h3>
+<div class="allDiv">
+<h3 id="allH3">{{name}}</h3>
 <img class = "mainlairs" src="{{imageUrl}}" alt="Room Image">
-<p>{{description}}</p>
-
-<p>posted by: {{owner.userName}}</p>
-    <a href="/lairs/details/{{_id}}">See details</a>
+<p class="allWords">Posted by: {{owner.userName}}</p>
+<p class="allWords">Description: {{description}}</p>
+    <a class="allWords" href="/lairs/details/{{_id}}">See details</a>
+    </div>
     
 
 {{/each}}
+</div>
+</section>
+

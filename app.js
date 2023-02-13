@@ -75,7 +75,7 @@ app.use(function(err, req, res, next) {
 
 const testLairs = [
   {
-      name: 'Frankensteins Lair',
+      name: 'Frankensteins Lab',
       description: 'Looks pretty cozy to me',
       imageUrl: 'https://cdnb.artstation.com/p/assets/images/images/003/483/485/medium/vlad-dorfman-frankenlabfinal.jpg?1474208189',
       owner: '63e97eb439585f341f83b907',
@@ -87,7 +87,53 @@ const testLairs = [
       imageUrl: 'https://media.vanityfair.com/photos/59f8b2ca5b4bf556949d8d0b/2:3/w_894,h_1341,c_limit/Bran-Castle-bw.jpg',
       owner: '63e97eb439585f341f83b907',
       test: "yes",
-  } 
+      
+  }, 
+  {
+    name: 'Frankensteins Lab',
+    description: 'Looks pretty cozy to me',
+    imageUrl: 'https://cdnb.artstation.com/p/assets/images/images/003/483/485/medium/vlad-dorfman-frankenlabfinal.jpg?1474208189',
+    owner: '63e97eb439585f341f83b907',
+    test: "yes"
+},
+{
+    name: 'Draculas Castle',
+    description: 'Spooky',
+    imageUrl: 'https://media.vanityfair.com/photos/59f8b2ca5b4bf556949d8d0b/2:3/w_894,h_1341,c_limit/Bran-Castle-bw.jpg',
+    owner: '63e97eb439585f341f83b907',
+    test: "yes",
+    
+}, 
+{
+  name: 'Frankensteins Lab',
+  description: 'Looks pretty cozy to me',
+  imageUrl: 'https://cdnb.artstation.com/p/assets/images/images/003/483/485/medium/vlad-dorfman-frankenlabfinal.jpg?1474208189',
+  owner: '63e97eb439585f341f83b907',
+  test: "yes"
+},
+{
+  name: 'Draculas Castle',
+  description: 'Spooky',
+  imageUrl: 'https://media.vanityfair.com/photos/59f8b2ca5b4bf556949d8d0b/2:3/w_894,h_1341,c_limit/Bran-Castle-bw.jpg',
+  owner: '63e97eb439585f341f83b907',
+  test: "yes",
+  
+}, {
+  name: 'Frankensteins Lab',
+  description: 'Looks pretty cozy to me',
+  imageUrl: 'https://cdnb.artstation.com/p/assets/images/images/003/483/485/medium/vlad-dorfman-frankenlabfinal.jpg?1474208189',
+  owner: '63e97eb439585f341f83b907',
+  test: "yes"
+},
+{
+  name: 'Draculas Castle',
+  description: 'Spooky',
+  imageUrl: 'https://media.vanityfair.com/photos/59f8b2ca5b4bf556949d8d0b/2:3/w_894,h_1341,c_limit/Bran-Castle-bw.jpg',
+  owner: '63e97eb439585f341f83b907',
+  test: "yes",
+  
+}, 
+  
    ];
 
 mongoose
@@ -105,8 +151,17 @@ mongoose
     console.error("Error connecting to mongo: ", err);
   });
 
-  const seedDB = () => {
-    Rooms.insertMany(testLairs);
-    }
-    seedDB();
-module.exports = app;
+  const deleteDb = async () => {
+    await Rooms.deleteMany({});
+  };
+  
+  const seedDB = async () => {
+    await Rooms.insertMany(testLairs);
+  };
+
+  (async () => {
+    await deleteDb();
+    await seedDB();
+  })();
+
+    module.exports = app;

@@ -3,14 +3,22 @@
   <head>
     <title>{{title}}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+
   </head>
   <body>
     <nav>
-      <a href="/users/profile">User Profile</a><span> | </span>
-      <a href="/lairs">Lairs</a><span> | </span>
-      <a href="/users/login">Login</a><span> | </span>
-      <a href="/users/signup">Signup </a><span> | </span>
-       <a href="/users/logout">Log out </a>
+      <span class="navDiv"><a></a><img class ="navImg" src="/images/clipart62576.png">
+      <h2 class="lairTitle"><a href="/">Lairbnb</a></h2></span>
+      <div class="navDiv">
+      <a class="navLink" href="/users/profile">User Profile</a><span class="navLink"> | </span>
+      <a class="navLink" href="/lairs">Lairs</a><span class="navLink"> | </span>
+      <a class="navLink" href="/users/login">Login</a><span class="navLink"> | </span>
+      <a class="navLink" href="/users/signup">Signup </a><span class="navLink"> | </span>
+       <a class="navLink" href="/users/logout">Log out </a>
+       </div>
       
     </nav>
     {{{body}}}

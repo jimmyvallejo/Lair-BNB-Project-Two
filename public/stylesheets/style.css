@@ -1,15 +1,111 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+*{
+  margin: 0;
+  padding: 0;
 }
+
 
 a {
-  color: #00B7FF;
+  
+  text-decoration: none;
+}
+
+nav{
+  background-color: #181823;
+  border-bottom: 1px solid white;
+  padding: 20px;
+  
+  font-family: 'Creepster', cursive;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+}
+
+nav a{
+  color:whitesmoke;
+}
+
+.navLink{
+  padding-left: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #BD1616;
+  
+}
+.navDiv{
+ display: flex;
+ flex-direction: row;
+ justify-content: flex-end;
+ align-items: center;
+ 
 }
 
 
+
+.lairTitle{
+  color: whitesmoke ;
+  letter-spacing: 3px;
+  font-size: 35px;
+  margin-left: 10px;
+}
+
+.navImg{
+  height: 75px;
+  width: 75px;
+}
+
+.allDiv{
+  height: 420px;
+  width: 400px;
+  background-color: #181D31;
+  color: white;
+  margin: 10px;
+  font-family: 'Creepster', cursive;
+  border-radius: 20px;
+}
+
+.allDiv a{
+  color: #BD1616;
+}
+
+.allFlex{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.allWords{
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+}
+
+.allH2{
+text-align: center;
+padding-top: 40px;
+padding-bottom: 40px;
+font-family: 'Creepster', cursive;
+letter-spacing: 4px;
+font-size: 30px;
+color: white;
+}
+
+#allH3{
+display: flex;
+justify-content: center;
+padding: 10px 0px 10px 0px;
+
+}
+
+#lairPage{
+  background-color:#181823!important;
+  
+}
+
 .mainlairs {
-  width: 250px;
+  width: 400px;
 height: 250px;
 }
 
