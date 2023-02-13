@@ -1,0 +1,15 @@
+<h2>Lair page</h2>
+
+
+
+{{#each foundRooms}}
+
+<h3>{{name}}</h3>
+<img class = "mainlairs" src="{{imageUrl}}" alt="Room Image">
+<p>{{description}}</p>
+
+<p>posted by: {{owner.userName}}</p>
+    <a href="/lairs/details/{{_id}}">See details</a>
+    
+
+{{/each}}

@@ -1,0 +1,41 @@
+<h3>{{name}}</h3>
+<img class = "specificPic" src="{{imageUrl}}" alt="Room Image">
+<p>{{description}}</p>
+
+
+
+<p>posted by: {{owner.userName}}</p>
+
+<a href="/lairs/edit/{{_id}}"><button>Edit</button></a>
+
+<a href="/lairs/delete/{{_id}}"><button>Delete</button></a>
+
+
+<form action="/lairs/add-review/{{_id}}" method="post">
+    <label for="">New Comment</label>
+    <input type="text" name="comment">
+
+    <button type="submit">Add Comment</button>
+
+</form>
+
+{{#if reviews}}
+
+    <ul>
+
+    {{#each reviews}}
+
+        <li>
+            <p>{{comment}}</p>
+            <h6>-{{user.userName}}</h6>
+        </li>
+
+    {{/each}}
+
+    </ul>
+
+{{else}}
+
+    <p>No Reviews yet</p>
+
+{{/if}}
