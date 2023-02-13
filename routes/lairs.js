@@ -44,10 +44,61 @@ Rooms.findByIdAndDelete(req.params.id)
 router.get('/deleteCheck', (req, res, next)=> {
     res.render('lairs/deleteCheck.hbs')
     })
+
+
+    router.get('/create-lair', isLoggedIn, (req, res, next) => {
+        res.render('lairs/create-lair.hbs');
+      });
     
     
+router.post('/create-lair', isLoggedIn, (req, res, next) => {
 
+    const { name, description, imageUrl } = req.body
 
+    Rooms.create({
+        name,
+        imageUrl,
+        description,
+        owner: req.session.user._id
+    })
+    .then((createdRoom) => {
+        console.log(createdRoom)
+        res.redirect('/lairs')
+    })
+    .catch((err) => {
+        console.log(err)
+    })
 
+})
+
+router.get('/edit/:id', isOwner, (req, res, next) => {
+
+    Rooms.findById(req.params.id)
+    .then((foundRoom) => {
+        res.render('lairs/edit-room.hbs', foundRoom)
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+})
+
+router.post('/edit/:id', (req, res, next) => {
+    const { name, description, imageUrl } = req.body
+    Rooms.findByIdAndUpdate(req.params.id, 
+        {
+            name, 
+            imageUrl,
+            description
+            
+        },
+        {new: true})
+    .then((updatedRoom) => {
+        console.log(updatedRoom)
+        res.redirect(`/lairs/details/${req.params.id}`)
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+}) 
 
 module.exports = router;

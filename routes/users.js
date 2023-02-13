@@ -15,7 +15,7 @@ router.get('/signup', function(req, res, next) {
 });
 
 router.post('/signup', (req, res, next) =>{
-  const { userName, email, password } = req.body;
+  const { userName, email, password, imageUrl} = req.body;
 
   if (!userName || !email || !password) {
     res.render('users/signup.hbs', { errorMessage: 'All fields are mandatory. Please provide your username, email and password.' });
@@ -31,7 +31,8 @@ router.post('/signup', (req, res, next) =>{
       return User.create({
         userName,
         email,
-        password: hashedPassword
+        password: hashedPassword,
+        imageUrl
       });
     })
     .then((userFromDB) => {
@@ -91,11 +92,50 @@ router.get('/logout', (req, res, next) => {
 
 
 
-router.get('/profile', isLoggedIn, (req, res, next) =>{
-  res.render('users/profile.hbs');
+
+
+router.get('/profile', isLoggedIn ,(req, res, next) => {
+  User.findById(req.session.user._id)
+  .then((foundUser) => {
+    res.render('users/profile.hbs', foundUser)
+  })
+  .catch((err) => {
+      console.log(err)
+  })
+})
+
+router.get('/profile/edit', isLoggedIn ,(req, res, next) => {
+  User.findById(req.session.user._id)
+  .then((foundUser) => {
+    res.render('users/profile-edit.hbs', foundUser)
+  })
+  .catch((err) => {
+      console.log(err)
+  })
+})
+
+router.post('/profile/edit', (req, res, next) => {
+  const { userName, email, imageUrl, password } = req.body;
+
+  bcryptjs.genSalt(saltRounds)
+    .then(salt => bcryptjs.hash(password, salt))
+    .then(hashedPassword => {
+      return User.findByIdAndUpdate(req.session.user._id, {
+        userName, 
+        imageUrl,
+        email,
+        password: hashedPassword
+      }, { new: true });
+    })
+    .then((updatedUser) => {
+      console.log(updatedUser)
+      res.redirect(`/users/profile/`)
+    })
+    .catch(err => {
+      console.error(err);
+      next(err);
+    });
 });
-
-
 
 
 

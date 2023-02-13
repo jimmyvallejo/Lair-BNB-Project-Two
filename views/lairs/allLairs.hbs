@@ -3,7 +3,8 @@
 
     
 <section id="lairPage">
-    <h2 class="allH2">Lair page</h2>
+    <h2 class="allH2">Lair listings</h2>
+    
 <div class="allFlex">
 {{#each foundRooms}}
 
@@ -12,7 +13,7 @@
 <img class = "mainlairs" src="{{imageUrl}}" alt="Room Image">
 <p class="allWords">Posted by: {{owner.userName}}</p>
 <p class="allWords">Description: {{description}}</p>
-    <a class="allWords" href="/lairs/details/{{_id}}">See details</a>
+    <a class="allWords alllink" href="/lairs/details/{{_id}}">See details</a>
     </div>
     
 

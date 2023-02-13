@@ -1,0 +1,29 @@
+<section id="profile"><h2 class="profileh2">Profile page</h2>
+<div class="editDiv">
+<img id="profilepic" src="{{imageUrl}}">
+<form class ="flexform" action="/users/profile/edit" method="post">
+<div class="inputdiv">
+<label for="">Edit Image: </label>
+<input type="text" name="imageUrl" value="{{imageUrl}}">
+</div>
+<div class="inputdiv">
+<label for="">Edit Username:</label>
+<input type="text" name="userName" value="{{userName}}">
+</div>
+<div class="inputdiv">
+<label for="">Edit Email:</label>
+<input type="text" name="email" value="{{email}}">
+</div>
+
+<div class="inputdiv">
+<label for="">Edit Password:</label>
+<input type="text" name="password" value="">
+</div>
+
+<button class="editbtn" type="submit">Submit</button>
+</form>
+</div>
+
+</section>
+
+

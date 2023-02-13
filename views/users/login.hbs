@@ -1,17 +1,24 @@
-<h2>Login</h2>
+<section class="loginpage">
 
+<div class="logindiv">
+   
 <form action="/users/login"  method="post">
+ <h2 class="loginh2">Login</h2>
 
-    <label for="">Email</label>
-    <input type="email" name="email">
-
-    <label for="">Password</label>
-    <input type="password" name="password">
-
-    <button type="submit">Login</button>
-
+    <div class="logindiv2"><label class="emaillabel" for="">Email:</label>
+    <input class="emailinput" type="email" name="email">
+        </div>
+    <div class="logindiv2">
+    <label for="">Password:</label>
+    <input class="passwordinput" type="password" name="password">
+</div>
+    <div class="logindiv2">
+    <button class="loginbtn" type="submit">Login</button>
+</div>
 </form>
 
 {{#if errorMessage}}
-    <p>{{errorMessage}}</p>
+    <p class="loginp">{{errorMessage}}</p>
 {{/if}}
+</div>
+</section>
