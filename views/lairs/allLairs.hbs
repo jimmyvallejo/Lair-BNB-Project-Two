@@ -5,6 +5,14 @@
 <section id="lairPage">
     <h2 class="allH2">Lair listings</h2>
     
+    <div class="allsearch"><form method="post" action="/lairs/searchbar">
+    <input class="searchbar" type="text" name="query">
+    <input id="searchimg" type="image" src="/images/mg.png" alt="submit">
+    </div>
+
+
+    </form>
+    
 <div class="allFlex">
 {{#each foundRooms}}
 
@@ -13,6 +21,8 @@
 <img class = "mainlairs" src="{{imageUrl}}" alt="Room Image">
 <p class="allWords">Posted by: {{owner.userName}}</p>
 <p class="allWords">Description: {{description}}</p>
+<p class="allWords">$ {{price}} night</p>
+
     <a class="allWords alllink" href="/lairs/details/{{_id}}">See details</a>
     </div>
     

@@ -1,0 +1,18 @@
+<section id="laircheckout">
+<h1>Request to book</h1>
+<h3 data-room-name="{{name}}">{{name}}</h3>
+<img class = "specificPic" src="{{imageUrl}}" alt="Room Image">
+<p>Posted by: {{owner.userName}}</p>
+<p>{{description}}</p>
+<p id="checkoutprice">${{price}} night</p>
+<label for="number-of-nights">Number of Nights:</label>
+<input type="number" id="number-of-nights" name="number-of-nights" min="1" required>
+<p id="finalprice"></p>
+
+<br>
+  <button type="submit" id="calculate-btn">Calculate</button>
+  
+  
+  <button type="submit" id="checkout-btn" disabled>Checkout</button>
+
+</section>

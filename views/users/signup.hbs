@@ -1,24 +1,38 @@
-<h2>Sign Up</h2>
+
+<section id="signup">
+<div class="logindiv">
 
 <form action="/users/signup"  method="post">
-
-    <label for="">User Name</label>
+<div id="signupWrapper">
+<h2>Sign Up</h2>
+<div id="signupWrapper">
+<div class="logindiv2">
+    <label class="emaillabel" for="">User Name: </label>
     <input type="text" name="userName">
+     </div>
 
-    <label for="">Email</label>
+     <div class="logindiv2">
+        <div class="emaildiv">
+    <label class="emaillabel" for="">Email: </label>
     <input type="email" name="email">
-
-    <label for="">Password</label>
+    </div>
+    </div>
+    <div class="logindiv2">
+    <label class="passwordinput" for="">Password: </label>
     <input type="password" name="password">
-
+      </div>
  
-
-    <button type="submit">Create Account</button>
-
+<div class="logindiv2">
+    <button type="submit">Create Account </button>
+</div>
 </form>
+
 
 {{#if errorMessage}}
 
     <p>{{errorMessage}}</p>
 
 {{/if}}
+</div>
+</section>
+

@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const mongoose = require('mongoose')
+const fileUploader = require('../config/cloudinary.config');
 
 const bcryptjs = require('bcryptjs');
 const saltRounds = 10;
@@ -14,7 +15,7 @@ router.get('/signup', function(req, res, next) {
   res.render('users/signup.hbs');
 });
 
-router.post('/signup', (req, res, next) =>{
+router.post('/signup', fileUploader.single('movie-cover-image'), (req, res, next) =>{
   const { userName, email, password, imageUrl} = req.body;
 
   if (!userName || !email || !password) {

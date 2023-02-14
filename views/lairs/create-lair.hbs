@@ -1,16 +1,36 @@
-<h2>Add New Room</h2>
+<section id="createlair">
+<div class="creatediv">
+<h2>List a Lair</h2>
+<img src="/images/pngaaa.com-2485316.png">
 
-<form action="/lairs/create-lair" method="post">
-
-<label for="">Name</label>
+<form action="/lairs/create-lair" method="post" enctype="multipart/form-data">
+<div class="creatediv2">
+    <div id="namediv">
+<label for="">Name: </label>
 <input type="text" name="name">
-
-<label for="">Description</label>
+</div>
+</div>
+<div class="creatediv2">
+    <div id="descdiv">
+<label for="">Description: </label>
 <input type="text" name="description">
-
-<label for="">Image</label>
-<input type="text" name="imageUrl">
-
-<button type="submit">Add Lair</button>
-
+</div>
+</div>
+<div class="creatediv2">
+    <div id="pricediv">
+<label for="">Pricing: </label>
+<input type="text" name="price">
+</div>
+</div>
+<div class="creatediv2">
+    <div id="imgdiv">
+<label for="">Image: </label>
+<input id="imginput" type="file" name="imageUrl">
+</div>
+</div>
+<div class="creatediv2">
+<button id="createsubmit" type="submit">Add Lair</button>
+</div>
 </form>
+</div>
+</section>
