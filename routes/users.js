@@ -11,7 +11,7 @@ const { isLoggedIn, isLoggedOut } = require('../middleware/route-guard')
 const User = require('../models/User.model')
 
 /* GET users listing. */
-router.get('/signup', function(req, res, next) {
+router.get('/signup', isLoggedOut, function(req, res, next) {
   res.render('users/signup.hbs');
 });
 
@@ -54,7 +54,7 @@ router.post('/signup', fileUploader.single('movie-cover-image'), (req, res, next
 
 })
 
-router.get('/login', (req, res, next) =>{
+router.get('/login', isLoggedOut, (req, res, next) =>{
   res.render('users/login.hbs');
 })
 

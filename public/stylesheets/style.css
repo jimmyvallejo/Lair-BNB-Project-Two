@@ -69,6 +69,119 @@ nav a:last-child {
   width: 75px;
 }
 
+
+#mainimg {
+ width: 250px;
+ height: 250px;
+
+}
+
+#success{
+  padding-top: 100px;
+  min-height: 800px;
+  background-color: #181823;
+  background-image: url('/images/cropped-1920-1080-315756.jpg');
+  background-position: center center;
+  background-attachment:inherit;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+#topdiv{
+ 
+ margin-bottom: 300px;
+ margin-right: 600px;
+}
+
+#topdiv{
+ 
+  margin-bottom: 300px;
+  margin-right: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+ }
+
+ #topdiv a{
+  margin-right:50px;
+  margin-left: 20px;
+  padding:10px;
+  background-color: aliceblue;
+  font-size: 15px;
+  border-radius: 9px;
+  text-decoration: none;
+  color: black;
+ }
+
+ #topdiv a:hover{
+  background-color: black;
+  color: aliceblue;
+  text-decoration: none;
+ }
+
+ #toplairs{
+  text-decoration: none;
+ }
+
+ @media screen and (max-width: 1200px) {
+  #topdiv {
+    margin-right: 400px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #topdiv {
+    margin-right: 200px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #topdiv {
+    margin-right: 100px;
+  }
+}
+
+
+ #topbtns {
+  display: flex;
+  flex-direction: row;
+ 
+ }
+
+#topdiv h1{
+  color: aliceblue;
+  font-family: 'Creepster', cursive;
+font-size: 60px;
+z-index: 1;
+margin-bottom: 35px;
+margin-top: 25px;
+}
+
+#topdiv span{
+  text-decoration: underline;
+}
+
+#message{
+  text-align: center;
+  margin-top:-700px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height:10px;
+  
+ 
+}
+
+
 #searchimg{
   height:20px;
   width: 20px;
@@ -558,8 +671,52 @@ margin-left: 37px;
 
 #deletecheck{
   padding-top: 100px;
+  min-height: 800px;
+  background-color: #181823;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+#deletecheck div{
+  
+  font-family: 'Creepster', cursive; 
+  text-align: center;
+  padding-top: 100px;
+
+
+}
+
+#deletecheck h2{
+  font-size: 50px;
+  color: #BD1616;
+}
+
+#deletecheck h3{
+  font-size: 28px;
+  color: #BD1616;
+  margin-bottom: 20px;
+}
+
+#deletecheck a{
+  border: 1px solid black;
+  padding: 5px;
+  margin-top: 10px;
+  color: aliceblue;
+  text-decoration: none;
+  background-color: black;
+  border-radius: 8px;
+}
+
+#deletecheck a:hover{
+  border: 1px solid black;
+  padding: 5px;
+  margin-top: 10px;
+  color: black;
+  text-decoration: none;
+  background-color: aliceblue;
+  border-radius: 8px;
+}
 
 #editlair{
 padding-top: 100px;
@@ -584,7 +741,7 @@ align-items: center;
 }
 
 #laircheckout{
-  padding-top: 100px;
+  
   min-height: 980px;
   display: flex;
   flex-direction: column;
@@ -594,8 +751,24 @@ align-items: center;
   background-color: #181823;
  font-family: 'Creepster', cursive; 
  padding-bottom: 50px;
- padding-top: 170px;
+ padding-top: 150px;
 }
+
+
+#laircheckout h1 {
+  font-size: 35px;
+}
+
+#laircheckout h3 {
+  font-size: 22px;
+}
+
+#laircheckout p {
+  font-size: 20px;
+}
+
+
+
 
 #laircheckout input{
   width: 43px;
@@ -604,10 +777,24 @@ align-items: center;
   padding: 10px;
 }
 
-#success{
-  padding-top: 100px;
-  min-height: 800px;
+#laircheckout button{
+  padding: 6px;
+  background-color: black;
+  color: aliceblue;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
 }
+
+#laircheckout button:hover{
+background-color: aliceblue;
+color: black;
+  cursor: pointer;
+}
+
 
 footer{
 display: flex;
@@ -640,4 +827,4 @@ height: 100px;
    
   }
 
- 
+  

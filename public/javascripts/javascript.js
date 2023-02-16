@@ -6,13 +6,7 @@ const priceEl = document.querySelector('#checkoutprice');
 const priceText = priceEl.textContent;
 const price = parseFloat(priceText.replace('$', '').split(' ')[0]);
 const nightStay = document.getElementById('nightStay')
-
-
-let nightsvalue = numberOfNightsEl.value
-
-
-
-
+let nightsvalue = numberOfNightsEl.value;
 
 
 const display = document.getElementById('number-of-nights-display')
@@ -24,14 +18,7 @@ calculateBtn.addEventListener('click', () => {
 
 });
 
-
 let roomName = document.getElementById('roomName').innerText
-
-
-
-
-
-
 
 checkoutBtn.addEventListener('click', () => {
   var numberOfNights = parseInt(numberOfNightsEl.value);
@@ -72,8 +59,6 @@ checkoutBtn.addEventListener('click', () => {
                     break;
            
   }
-  
-  
   fetch("http://localhost:4000/create-checkout-session", {
     method: "POST",
     headers: {
@@ -102,33 +87,3 @@ checkoutBtn.addEventListener('click', () => {
 
 
 
-
-
-
-
-
-
-
-// checkoutBtn.addEventListener('click', () =>{
-  //   const bookId = checkoutBtn.dataset.bookId
-  //   fetch(`/book/${bookId}`, {
-  //      method: 'POST',
-  //      headers: {
-  //       'Content-Type': 'application/json'
-  //      },
-  //      body:JSON.stringify({
-  //       items:[
-  //         {id: 1, quantity: 3},
-  //         {id: 2, quantity: 1}
-  //       ]
-  //      })
-  //   }).then(res =>{
-  //     if (res.ok) return res.json()
-  //     return res.json().then(json => Promise.reject(json))
-  //   }).then(({ url })=>{
-  //     console.log(url)
-  //     // window.location = url
-  //   }).catch(e => {
-  //     console.error(e.error)
-  //   })
-  // })
