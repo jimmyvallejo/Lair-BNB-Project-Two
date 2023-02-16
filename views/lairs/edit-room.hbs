@@ -1,4 +1,5 @@
 <section id="editlair">
+
 <h2>Edit Lair</h2>
 
 <form action="/lairs/edit/{{_id}}" method="post">
@@ -6,14 +7,20 @@
 <label for="">Name</label>
 <input type="text" name="name" value="{{name}}">
 
-<label for="">Image</label>
-<input type="text" name="imageUrl" value="{{imageUrl}}">
-
 <label for="">Description</label>
 <input type="text" name="description" value="{{description}}">
 
+<label for="">price</label>
+<input type="text" name="price" value="{{price}}">
 
-<button type="submit">Edit Lair</button>
+<label for="">Image</label>
+<input type="text" name="imageUrl" value="{{imageUrl}}">
+
+
+<button type="submit">Edit Lairs</button>
+
+
 
 </form>
+
 </section>

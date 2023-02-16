@@ -56,6 +56,11 @@ router.post('/create-lair', isLoggedIn, fileUploader.single('imageUrl'), (req, r
 
     const { name, description, price,} = req.body
 
+    if (!name || !description || !price ) {
+        res.render('lairs/create-lair.hbs', { errorMessage: 'All fields are mandatory.' });
+        return;
+      }
+     
     Rooms.create({
         name,
         imageUrl: req.file.path,
@@ -124,15 +129,20 @@ router.post('/searchbar', (req, res, next) => {
 
 
 router.get('/book/:id', isLoggedIn ,(req, res, next) => {
+    const bookId = req.params.id;
+    
     Rooms.findById(req.params.id)
     .populate('owner')
     .then((foundRoom) => {
         res.render('lairs/laircheckout.hbs', foundRoom)
+       
     })
     .catch((err) => {
         console.log(err)
     })
 })
+
+
 
 
 module.exports = router;

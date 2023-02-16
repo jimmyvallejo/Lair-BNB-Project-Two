@@ -8,9 +8,11 @@ var mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
-
+const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY);
 
 const Rooms = require('./models/Room-model')
+
+const testLairss = require("./Seed/testLairs");
 
 
 
@@ -19,6 +21,7 @@ var usersRouter = require('./routes/users');
 var lairRouter = require('./routes/lairs');
 
 var app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -40,7 +43,7 @@ app.use(
       sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
       secure: process.env.NODE_ENV === 'production',
       httpOnly: true,
-      maxAge: 600000 // 60 * 1000 ms === 1 min
+      maxAge: 6000000 // 60 * 1000 ms === 1 min
     },
     store: MongoStore.create({
       mongoUrl: process.env.MONGODB_URI 

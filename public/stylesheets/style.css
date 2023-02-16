@@ -166,10 +166,45 @@ height: 250px;
 
 #lairdetail{
   padding-top: 100px;
+  min-height: 980px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: aliceblue;
+  background-color: #181823;
+ font-family: 'Creepster', cursive; 
+ padding-bottom: 50px;
+ padding-top: 170px;
 }
 
-#lairdetail img{
-  
+#lairdetail button{
+  padding: 7px;
+  font-family: 'Times New Roman', Times, serif;
+  border-radius: 10px;
+  letter-spacing: 2px;
+  border-style: none;
+}
+
+
+#lairdetail button:hover{
+background-color: black;
+color: aliceblue;
+}
+
+
+#lairdetail h3{
+  padding-bottom: 50px;
+  font-size: 35px;
+}
+
+#lairdetail p {
+  font-size: 20px;
+}
+
+.detailprice{
+  text-decoration: underline;
+  font-size: 23px;
 }
 
 
@@ -227,7 +262,7 @@ height: 900px;
   cursor: pointer;
   color: aliceblue;
   font-family:'Times New Roman', Times, serif;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   font-size: 15px;
   font-weight: bold;
@@ -278,7 +313,7 @@ padding: 8px;
 margin-left: 135px;
 color: aliceblue;
   font-family:'Times New Roman', Times, serif;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   font-size: 15px;
   font-weight: bold;
@@ -295,6 +330,12 @@ color: aliceblue;
 background-color: aliceblue;
 color: black;
 }
+
+#editdiv{
+  display: flex;
+  flex-direction: column;
+}
+
 
 .loginpage{
   background-color: #181823;
@@ -346,7 +387,7 @@ color: black;
   padding: 8px;
   color: aliceblue;
     font-family:'Times New Roman', Times, serif;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     font-size: 15px;
     font-weight: bold;
@@ -414,7 +455,7 @@ color: black;
   padding: 12px;
   color: aliceblue;
     font-family:'Times New Roman', Times, serif;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     font-size: 15px;
     font-weight: bold;
@@ -475,15 +516,21 @@ color: black;
   font-size: 20px;
  }
 
+#createlair p {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
 .creatediv2{
   padding-top: 25px;
 }
 
 .creatediv{
   background-color: #181D31;
-  margin-top: 250px;
+  margin-top: 225px;
   color: aliceblue;
-height: 510px;
+height: 530px;
 width: 750px;
 display: flex;
 flex-direction: column;
@@ -516,11 +563,50 @@ margin-left: 37px;
 
 #editlair{
 padding-top: 100px;
+min-height: 800px;
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+
+#editlair form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.editdiv1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #laircheckout{
   padding-top: 100px;
-  min-height: 100vh;
+  min-height: 980px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: aliceblue;
+  background-color: #181823;
+ font-family: 'Creepster', cursive; 
+ padding-bottom: 50px;
+ padding-top: 170px;
+}
+
+#laircheckout input{
+  width: 43px;
+  height: 25px;
+  font-size: 18px;
+  padding: 10px;
+}
+
+#success{
+  padding-top: 100px;
+  min-height: 800px;
 }
 
 footer{
@@ -530,6 +616,10 @@ align-items: center;
 background: #181823;
 
 height: 100px;
+}
+
+#charge{
+  padding-top: 100px;
 }
   
 .github{

@@ -3,7 +3,7 @@
 <img class = "specificPic" src="{{imageUrl}}" alt="Room Image">
 <p>Posted by: {{owner.userName}}</p>
 <p>{{description}}</p>
-<p>${{price}} night</p>
+<p class="detailprice">${{price}} night</p>
 
 
 
@@ -17,7 +17,7 @@
 
 
 <form action="/lairs/add-review/{{_id}}" method="post">
-    <label for="">New Comment</label>
+    <label for="">New Comment: </label>
     <input type="text" name="comment">
 
     <button type="submit">Add Comment</button>

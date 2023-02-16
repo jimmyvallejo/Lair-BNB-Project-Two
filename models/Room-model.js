@@ -9,9 +9,7 @@ const roomSchema = new Schema(
    },
     description: String,
     imageUrl: {
-      type: String,
-      required:[true, "Image is required. "],
-      unique: true,
+      type: String
    },
     price: Number,
     owner: { type: Schema.Types.ObjectId, ref: "User", default: "63e97eb439585f341f83b907'"},
