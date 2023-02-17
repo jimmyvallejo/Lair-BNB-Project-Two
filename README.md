@@ -1,6 +1,6 @@
 # lairbnb-Project-Two
 
-# https://lairbnb.fly.dev/lairs
+# https://lairbnb.fly.dev
 
 
 
