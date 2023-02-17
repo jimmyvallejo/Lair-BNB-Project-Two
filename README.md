@@ -1,4 +1,6 @@
-# Lair-BNB-Project-Two
+# lairbnb-Project-Two
+
+# https://lairbnb.fly.dev/lairs
 
 -- Vanilla JavaScript with Css/Html and express/MongoDb.
 
