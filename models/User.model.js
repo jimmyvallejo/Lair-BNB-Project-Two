@@ -14,7 +14,7 @@ const userSchema = new Schema(
       },
     password: String,
     imageUrl: {type: String, 
-      default: 'http://clipart-library.com/img1/1590703.jpg'},
+      default: 'https://i.pinimg.com/originals/ab/85/8f/ab858fbfd2c5aa35bf96350498d695ca.jpg'},
     
   },
   {

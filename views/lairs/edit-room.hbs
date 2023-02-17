@@ -1,20 +1,20 @@
 <section id="editlair">
-
+<div id="editlairdiv">
 <h2>Edit Lair</h2>
 
 <form action="/lairs/edit/{{_id}}" method="post">
 
-<label for="">Name</label>
+<label for="">Name:</label>
 <input type="text" name="name" value="{{name}}">
 
-<label for="">Description</label>
+<label for="">Description:</label>
 <input type="text" name="description" value="{{description}}">
 
-<label for="">price</label>
+<label for="">Price:</label>
 <input type="text" name="price" value="{{price}}">
 
-<label for="">Image</label>
-<input type="text" name="imageUrl" value="{{imageUrl}}">
+<label for="">Image: </label>
+<input id="imginput" type="file" name="imageUrl">
 
 
 <button type="submit">Edit Lairs</button>
@@ -22,5 +22,5 @@
 
 
 </form>
-
+</div>
 </section>

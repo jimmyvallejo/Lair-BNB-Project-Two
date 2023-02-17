@@ -12,7 +12,7 @@ const roomSchema = new Schema(
       type: String
    },
     price: Number,
-    owner: { type: Schema.Types.ObjectId, ref: "User", default: "63e97eb439585f341f83b907'"},
+    owner: { type: Schema.Types.ObjectId, ref: "User"},
     reviews: [{type: Schema.Types.ObjectId, ref: "Review"}],
     test: String
   });

@@ -450,6 +450,7 @@ color: black;
 }
 
 
+
 .loginpage{
   background-color: #181823;
  padding-top: 120px;
@@ -606,6 +607,7 @@ color: black;
  border-radius: 10px;
  margin-left: 145px;
  margin-top: 7px;
+ cursor: pointer;
 }
 
 #createlair h2{
@@ -724,8 +726,24 @@ min-height: 800px;
 display: flex;
 flex-direction: column;
 align-items: center;
-
+background-color: #181823;
+color: aliceblue;
 }
+
+
+#editlair label{
+  font-family: 'Creepster', cursive; 
+  font-size: 22px;
+  margin-top: 20px;
+}
+
+#editlair h2 {
+  text-align: center;
+  font-family: 'Creepster', cursive; 
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
 
 #editlair form{
   display: flex;
@@ -733,6 +751,33 @@ align-items: center;
   align-items: center;
   
 }
+
+
+#editlairdiv{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  
+  
+}
+
+#editlairdiv button{
+margin-top: 20px;
+border: none;
+padding: 6px;
+border-radius: 12px;
+background-color: aliceblue;
+color: black;
+}
+
+
+
+#editlairdiv button:hover{
+
+  background-color: black;
+  color: aliceblue;
+  cursor: pointer;
+  }
 
 .editdiv1{
   display: flex;

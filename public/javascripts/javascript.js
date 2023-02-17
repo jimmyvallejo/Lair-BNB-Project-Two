@@ -59,7 +59,7 @@ checkoutBtn.addEventListener('click', () => {
                     break;
            
   }
-  fetch("http://localhost:4000/create-checkout-session", {
+  fetch("https://lairbnb.fly.dev/create-checkout-session", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

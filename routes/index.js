@@ -40,8 +40,8 @@ router.post("/create-checkout-session", async (req, res) => {
           quantity: req.body.items[0].quantity,
         }
       }),
-      success_url: `${process.env.CLIENT_URL}/success`,
-      cancel_url: `${process.env.CLIENT_URL}/cancel`,
+      success_url: `https://lairbnb.fly.dev/success`,
+      cancel_url: `https://lairbnb.fly.dev/cancel`,
     })
     res.json({ url: session.url })
   } catch (e) {
