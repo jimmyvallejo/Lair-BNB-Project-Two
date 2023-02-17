@@ -1,11 +1,8 @@
 <section id="profile"><h2 class="profileh2">Edit:</h2>
 <div class="editDiv">
 <img id="profilepic" src="{{imageUrl}}">
-<form class ="flexform" action="/users/profile/edit" method="post">
-<div class="inputdiv">
-<label for="">Edit Image: </label>
-<input type="text" name="imageUrl" value="{{imageUrl}}">
-</div>
+<form class ="flexform" action="/users/profile/edit" method="post" enctype="multipart/form-data">
+
 <div class="inputdiv">
 <label for="">Edit Username:</label>
 <input type="text" name="userName" value="{{userName}}">
@@ -18,6 +15,10 @@
 <div class="inputdiv">
 <label for="">Edit Password:</label>
 <input type="text" name="password" value="">
+</div>
+<div class="inputdiv">
+<label for="">Image: </label>
+<input id="imginput" type="file" name="imageUrl">
 </div>
 
 <button class="editbtn" type="submit">Submit</button>

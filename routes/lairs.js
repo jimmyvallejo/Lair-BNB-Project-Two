@@ -61,9 +61,15 @@ router.post('/create-lair', isLoggedIn, fileUploader.single('imageUrl'), (req, r
         return;
       }
      
+       if(req.file) {
+        imageUrl = req.file.path;
+       } else {
+        imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Question_mark_%28black%29.svg/1024px-Question_mark_%28black%29.svg.png"
+       }
+
     Rooms.create({
         name,
-        imageUrl: req.file.path,
+        imageUrl,
         description,
         price,
         owner: req.session.user._id
@@ -79,7 +85,10 @@ router.post('/create-lair', isLoggedIn, fileUploader.single('imageUrl'), (req, r
 })
 
 router.get('/edit/:id', isOwner, (req, res, next) => {
-
+  
+    
+    
+    
     Rooms.findById(req.params.id)
     .then((foundRoom) => {
         res.render('lairs/edit-room.hbs', foundRoom)
@@ -89,8 +98,21 @@ router.get('/edit/:id', isOwner, (req, res, next) => {
     })
 })
 
-router.post('/edit/:id', (req, res, next) => {
-    const { name, description, price, imageUrl } = req.body
+router.post('/edit/:id', fileUploader.single('imageUrl'),(req, res, next) => {
+    const { name, description, price} = req.body
+    
+    if (!name || !description || !price ) {
+        res.render('lairs/edit-room.hbs');
+        return;
+      }
+    
+      if(req.file) {
+        imageUrl = req.file.path;
+       } else {
+        imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Question_mark_%28black%29.svg/1024px-Question_mark_%28black%29.svg.png"
+       }
+
+
     Rooms.findByIdAndUpdate(req.params.id, 
         {
             name, 

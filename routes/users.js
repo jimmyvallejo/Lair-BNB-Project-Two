@@ -115,9 +115,17 @@ router.get('/profile/edit', isLoggedIn ,(req, res, next) => {
   })
 })
 
-router.post('/profile/edit', (req, res, next) => {
-  const { userName, email, imageUrl, password } = req.body;
+router.post('/profile/edit', fileUploader.single('imageUrl'),(req, res, next) => {
+  const { userName, email, password } = req.body;
 
+  if(req.file) {
+    imageUrl = req.file.path;
+   } else {
+    imageUrl = "https://i.pinimg.com/originals/ab/85/8f/ab858fbfd2c5aa35bf96350498d695ca.jpg"
+   }
+  
+  
+  
   bcryptjs.genSalt(saltRounds)
     .then(salt => bcryptjs.hash(password, salt))
     .then(hashedPassword => {
